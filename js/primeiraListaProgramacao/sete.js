@@ -20,12 +20,20 @@ while (i !== 9){
     i = i + 1;
 }
 
+let certo = false
 
-let sabor = prompt("Escolha um sabor digitando seu nome: ");
-
-while (igual > 9){
-    if(sabor == sabores[i]){
-        console.log(valores[i]);
-        igual += 1;
+while (certo === false) {
+    let sabor = prompt("Escolha um sabor digitando seu nome: ");
+    
+    for (i = 0; i < 9; i++){
+        if(sabor == sabores[i]){
+            console.log(`O valor de ${sabores[i]} é: $${valores[i]} Reais.`);
+            igual += 1;
+            certo = true
+        }
     }
+    if (certo === false){
+            console.log("Você digitou algo incorretamente, tente novamente!")   
+        }
 }
+
